@@ -13,13 +13,12 @@ router.get('/gts', async (req, res)=>{
 
 
       // for (let i = 0; i<10; i++) {
-      const filter = {};
-      const all = await userModel.find(filter)
+
     
 
 
 
-      res.json({all:all})
+      res.json({name: "rudro"})
 
 
 })
