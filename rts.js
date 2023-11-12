@@ -9,6 +9,20 @@ const { validationResult, body, } = require('express-validator')
 
 
 
+router.get('/gts', async (req, res)=>{
+
+
+      // for (let i = 0; i<10; i++) {
+      const filter = {};
+      const all = await userModel.find(filter)
+    
+
+
+
+      res.json({all:all})
+
+
+})
 
 
 router.post('/jwt_decoder', async (req, res) => {
