@@ -16,7 +16,7 @@ const io = require('socket.io')(3001,{
     'https://kit.fontawesome.com/6395210d76.js',
     "mystic.ap-1.evennode.com",
     "https://mysticprotocol.onrender.com",
-"103.252.165.84"
+"103.252.165.84:3000"
   ],
   methods: ["GET", "POST"],
   credentials: true
@@ -78,7 +78,7 @@ app.use(
       'http://localhost:3001',
       'mystic.ap-1.evennode.com',
 "103.252.165.84:3000",
-      "103.252.165.84",
+      "103.252.165.84:3000",
       "https://mysticprotocol.onrender.com",
 
     ],
