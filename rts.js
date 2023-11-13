@@ -14,11 +14,8 @@ router.get('/gts', async (req, res)=>{
 
       // for (let i = 0; i<10; i++) {
 
-    
 
-
-
-      res.json({name: "rudro"})
+      res.json("api working)
 
 
 })
