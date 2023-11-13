@@ -63,8 +63,8 @@ app.set("trust proxy", 1);
 const routes = require('./rts');
 app.use(function (req, res, next) {
   res.header('Access-Control-Allow-Origin', req.headers.origin);
-  res.render("Access-Control-Allow-Private-Network", "true");
-  res.render('Access-Control-Allow-Credentials', 'true')
+  // res.render("Access-Control-Allow-Private-Network", "true");
+  // res.render('Access-Control-Allow-Credentials', 'true')
   res.header("Access-Control-Allow-Headers","Origin, X-Requested-With, Content-Type, Accept");
 
   next();
@@ -78,7 +78,7 @@ app.use(
       'http://localhost:3001',
       'mystic.ap-1.evennode.com',
 "103.252.165.84:3000",
-"103.252.165.84",
+      "103.252.165.84",
       "https://mysticprotocol.onrender.com",
 
     ],
