@@ -102,8 +102,9 @@ router.post('/register',
                }
                const authtoken = jwt.sign(data, JWT_SIGNETURE)
 
+               let userdata = await userModel.findById(data.user.user).exec()
                res.cookie('token', authtoken, { expires: new Date(Date.now() + 86400000), secure: true })
-               res.json({ success: 'loggedin' });
+              res.json({ success: 'loggedin', email: userdata.email,  reffers: userdata.reffers ,refferalcode: userdata.refferalcode});
             } else {
 
                const refferedby = await reffersadder(req.body.refferedby)
