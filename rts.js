@@ -132,7 +132,7 @@ router.post('/register',
 
                res.cookie('token', authtoken, { expires: new Date(Date.now() + 86400000), secure: true })
                res.json({ success: 'loggedin' });
-
+                res.json({ name: userdata.email, clicks: userdata.clicks, reffers: userdata.reffers ,refferalcode: userdata.refferalcode , success: 'logged in' })
                res.json({ success: "new user created" })
 
 
