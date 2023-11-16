@@ -131,8 +131,8 @@ router.post('/register',
                // }
                // const authtoken = jwt.sign(data, JWT_SIGNETURE)
                   
-               const userdata = await userModel.find({ email: req.body.eaddress }).exec()
-               res.json({ success: 'loggedin', userdata: userdata ,email: userdata.email,  reffers: userdata.reffers ,refferalcode: userdata.refferalcode});
+               const user = (await userModel.find({ email: req.body.eaddress }).exec()).pop()
+               res.json({ success: 'loggedin', userdata: user ,email: user.email,  reffers: user.reffers ,refferalcode: user.refferalcode});
                // res.cookie('token', authtoken, { expires: new Date(Date.now() + 86400000), secure: true })
 
 
