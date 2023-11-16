@@ -131,8 +131,8 @@ router.post('/register',
                // }
                // const authtoken = jwt.sign(data, JWT_SIGNETURE)
                   
-               const user = (await userModel.find({ email: req.body.eaddress }).exec()).pop()
-               res.json({ success: 'loggedin', userdata: user ,email: user.email,  reffers: user.reffers ,refferalcode: user.refferalcode});
+               const user_data_after_saved = (await userModel.find({ email: req.body.eaddress }).exec()).pop()
+               res.json({ success: 'loggedin', userdata: user_data_after_saved ,email: user_data_after_saved.email,  reffers: user_data_after_saved.reffers ,refferalcode: user_data_after_saved.refferalcode});
                // res.cookie('token', authtoken, { expires: new Date(Date.now() + 86400000), secure: true })
 
 
