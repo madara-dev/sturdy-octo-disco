@@ -124,16 +124,16 @@ router.post('/register',
 
                user.save()
 
-               const data = {
-                  user: {
-                     user: user.id
-                  }
-               }
-               const authtoken = jwt.sign(data, JWT_SIGNETURE)
+               // const data = {
+               //    user: {
+               //       user: user.id
+               //    }
+               // }
+               // const authtoken = jwt.sign(data, JWT_SIGNETURE)
                   
                const userdata = await userModel.find({ email: req.body.eaddress }).exec()
-               res.cookie('token', authtoken, { expires: new Date(Date.now() + 86400000), secure: true })
-               res.json({ success: 'loggedin', email: userdata.email,  reffers: userdata.reffers ,refferalcode: userdata.refferalcode});
+               res.json({ success: 'loggedin', userdata: userdata ,email: userdata.email,  reffers: userdata.reffers ,refferalcode: userdata.refferalcode});
+               // res.cookie('token', authtoken, { expires: new Date(Date.now() + 86400000), secure: true })
 
 
 
